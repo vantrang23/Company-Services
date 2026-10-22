@@ -1,0 +1,1713 @@
+@import "variables";
+@import "mixins";
+@import "helpers";
+
+@import "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato';
+	font-size: $font-size-medium;
+}
+
+/*  header */
+header {
+	color: $black-grey-color;
+
+	.navbar {
+		padding-top: .625rem;
+		padding-bottom: 1.25rem;
+
+		@include mob-let {
+			padding-bottom: 1.0031rem;
+			padding-top: .9375rem;
+		}
+	}
+
+	.navbar-expand-lg .navbar-nav .nav-link {
+		padding: 0;
+		text-transform: uppercase;
+		color: $black-grey-color;
+
+		&.active,
+		//active
+		&:hover {
+			color: $primary-color;
+		}
+	}
+
+
+
+	.header-logo {
+		padding: 0;
+
+		img {
+			height: 60px;
+		}
+
+		@include mob-let {
+			img {
+				height: 4.3094rem;
+			}
+
+			padding-left: .8125rem;
+		}
+	}
+
+	.nav-item {
+		padding: 0;
+		margin-left: 2.813rem;
+
+		a .nav-link {
+			padding-left: 0rem;
+			padding-right: 0rem;
+
+			&.active,
+			//active
+			&:hover {
+				color: $primary-color;
+			}
+		}
+	}
+}
+
+
+
+@include mob-let {
+	.navbar-toggler {
+		margin-right: 1.5625rem;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		transition: right 300ms ease-out;
+		cursor: pointer;
+
+		&:focus,
+		&:active {
+			outline: none;
+			box-shadow: none;
+		}
+
+		.navbar-toggler-icon {
+			//change the icon to the color #003D9F.
+			background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23003D9F' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+		}
+	}
+
+	.navbar-collapse {
+		padding: 2.1875rem 1.75rem 11.8125rem 7.4375rem;
+		top: 5rem;
+		background-color: white;
+		text-align: right;
+
+		.nav-item {
+			margin-left: 0rem;
+			padding: 1.9375rem 0rem;
+
+			&:nth-child(1) {
+				padding-top: 0rem;
+			}
+
+			&:last-child {
+				padding-bottom: 0rem;
+			}
+		}
+	}
+}
+
+.top-header {
+	margin-top: 100px;
+}
+
+/****  carousel****/
+.carousel {
+	.wrapper-slider {
+
+		@include mobile {
+			.carousel-caption {
+				left: 0%;
+			}
+		}
+
+		img {
+			height: 37.5rem;
+			display: block; //default display for slide desktop
+
+			@include mobile {
+				display: none; //hidden
+			}
+		}
+
+		.slide-mobile {
+			img {
+				height: 30.625rem;
+				display: none; //default hidden for slide mobile
+
+				@include mobile {
+					display: block; //show slide
+				}
+			}
+		}
+
+		.custom-carousel-caption {
+
+			@include center-flex;
+			top: 0;
+			bottom: 0;
+
+			@include mobile {
+				padding-left: 2.875rem;
+			}
+
+			.caption-text {
+				text-align: center;
+				max-width: 47.125rem;
+				font-size: $font-size-xx-large;
+				line-height: 3.36rem;
+				font-weight: $font-weight-thin;
+				letter-spacing: 5.25px; // 15% of 35px
+
+				@include mobile {
+					font-size: $font-size-x-larges;
+				}
+			}
+		}
+	}
+
+	.carousel-btn {
+		padding-bottom: 2.625rem;
+
+		@include mobile {
+			padding: 0rem 0rem 1.375rem 1rem;
+
+		}
+	}
+
+	.carousel-indicators {
+		[data-bs-target] {
+			width: .75rem;
+			height: .75rem;
+			border-radius: 50%;
+			background-color: $grey-border; //gray when not active
+			border: none;
+			margin-right: .8125rem;
+			margin-left: 0rem;
+
+			&.active,
+			&:hover,
+			&:focus {
+				background-color: $primary-color; //blue when active, focused, or hovered
+			}
+		}
+	}
+}
+
+/* section contact */
+.wrapper-contact {
+	background: url("../img/bg-1.png") no-repeat center/cover;
+	padding: 3.5625rem 0rem 5.1875rem;
+
+	@include mobile {
+		padding: 1.9375rem 0rem 4.25rem 0rem;
+	}
+
+	@include mobile {
+		.card {
+			.card-body {
+				padding-top: 0rem;
+				padding-bottom: 0rem;
+
+			}
+		}
+
+		#employer-card {
+			margin-bottom: 3.3125rem;
+		}
+
+	}
+
+	.card-head {
+		margin-bottom: 1.3125rem;
+
+		.img-bg {
+			padding-top: 2.125rem;
+
+			&::after {
+				position: absolute;
+				content: "";
+				background-repeat: no-repeat;
+				background-position-x: center;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: 1;
+				max-height: 14.875rem;
+			}
+
+			&.img-bg-left::after {
+				background-image: url("../img/employer-vector.png");
+
+			}
+
+			&.img-bg-right::after {
+				background-image: url("../img/jobseeker-vector.png");
+			}
+		}
+
+		.card-img {
+			border-radius: 12.5rem;
+			width: 11.25rem;
+			margin: 0 auto;
+			position: relative;
+
+		}
+	}
+
+	@include mobile {
+		#jobs-card {
+			.card-content {
+				.card-text {
+					margin-bottom: 1.625rem;
+				}
+			}
+		}
+	}
+
+	.card-content {
+
+		max-width: 21.125rem;
+
+		.card-title {
+			line-height: 1.92rem;
+			margin-bottom: .625rem;
+
+		}
+
+		.card-text {
+			line-height: 1.5362rem;
+			margin-bottom: .625rem;
+		}
+
+
+		//button contact us of employer and jobs
+		.btn-contact {
+			line-height: 1.2rem;
+			width: fit-content;
+			margin: 0 auto;
+			padding: .8125rem 2.125rem .875rem 1.5625rem;
+
+			@include mobile {
+				width: 100%;
+			}
+		}
+	}
+}
+
+/*section our */
+.our {
+	background: linear-gradient(#7067d7cc, #e3e2ffcc), url('../img/bg-2.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-top: 5.4375rem;
+	padding-bottom: 2.5rem;
+	object-fit: cover;
+
+	@include mobile {
+		padding-top: 3.4494rem;
+		padding-bottom: 4.25rem;
+	}
+
+	.our-content {
+
+		@include mobile {
+			flex-direction: column; //stack items vertically
+			justify-content: center; //center items horizontally
+			align-items: center;
+
+			&.mission {
+				margin-bottom: 4.7619rem;
+
+				img {
+					margin-bottom: 2.5506rem;
+				}
+			}
+
+			&.vision {
+				img {
+					margin-bottom: 1.4881rem;
+				}
+			}
+		}
+
+		img {
+			transform: rotate(0deg);
+			max-height: 5.0625rem;
+			object-fit: cover;
+		}
+
+		.our-text {
+			margin-left: 1.4375rem;
+			line-height: 1.2rem;
+			padding-right: 7.5rem;
+			font-weight: $font-weight-thin;
+
+			@include mobile {
+				margin-left: 0rem;
+				padding-right: 0rem;
+				text-align: center; //center text on mobile
+			}
+
+			@include tablet {
+				padding-right: 0rem;
+			}
+		}
+	}
+}
+
+/*section about us*/
+.about-us {
+	background: url('../img/about.png') no-repeat center / cover;
+	padding-bottom: 2.4375rem;
+	padding-top: 4.5rem;
+
+	@include mobile {
+		padding: 5.5rem 2.5rem 7.0625rem 1.875rem;
+	}
+
+	.about-text {
+		max-width: 33.5rem;
+
+		h4 {
+			line-height: 1.65rem;
+			margin-bottom: 3.125rem;
+
+			@include mobile {
+				margin-bottom: 4.375rem;
+			}
+		}
+	}
+}
+
+/*footer  */
+
+footer {
+	background: $grey-lighter-color;
+
+	.main-footer {
+		padding-top: 2.6875rem;
+		padding-bottom: 1.6875rem;
+
+		@include mob-let {
+			padding: 2.375rem 1.125rem 1.5625rem .8125rem;
+		}
+
+		h5.footer-header {
+			font-weight: $font-weight-semi-bold;
+			line-height: 1.3438rem;
+		}
+
+		.span-title {
+			.span-address {
+				max-width: 10.4375rem;
+			}
+
+			a,
+			p {
+				padding-bottom: 1rem;
+				text-decoration: none;
+				color: $black-text-color;
+				font-weight: $font-weight-regular;
+				margin-bottom: 0rem;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.span-footer {
+			padding-top: 2.25rem;
+
+			@include mob-let {
+				padding-top: 0rem;
+			}
+
+			a {
+				text-decoration: none;
+				color: $black-text-color;
+				font-weight: $font-weight-regular;
+				line-height: 1.4688rem;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.span-title {
+			ul {
+				li {
+					flex-basis: 50%; //each item takes up 50% width
+				}
+			}
+
+			@include mob-let {
+				margin-bottom: 1.5625rem;
+			}
+		}
+
+		@include mob-let {
+			.social-media {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.btn-social {
+				line-height: 1.05rem;
+				display: flex;
+				border-radius: 100px;
+
+				i {
+					padding-right: 1.3125rem;
+				}
+
+				&:not(:first-child) {
+					//applies to all but the first button
+					padding-right: 4.1875rem;
+
+				}
+			}
+		}
+
+		.social-media {
+
+			//social-media of the footer
+			.btn-social {
+				line-height: 1.05rem;
+				padding: .6875rem 2rem .75rem 1.25rem;
+				margin-bottom: .9375rem;
+				border-radius: 100px;
+
+				i {
+					padding-right: 1.3125rem;
+				}
+
+				&:not(:first-child) {
+					//applies to all but the first button
+					padding-right: 4.1875rem;
+					margin-bottom: 0rem;
+				}
+			}
+		}
+	}
+
+	.copyright {
+		background-color: $grey-color;
+		line-height: 0.9rem;
+		padding: 1rem 0rem 1.1875rem 0rem;
+
+		@include mob-let {
+			padding: 1rem 1.125rem 1.875rem 1.125rem;
+		}
+	}
+
+	@include mob-let {
+		.copyright-item {
+			flex-direction: column;
+			text-align: center;
+
+			&>div {
+				&:first-child {
+					margin-bottom: 1.4375rem;
+				}
+			}
+		}
+	}
+}
+
+/* Modal */
+//button trigger modal
+#contact {
+	.btn-modal {
+		border-radius: .625rem 0rem 0rem .625rem;
+		z-index: 5;
+		top: 33.25rem;
+		cursor: pointer;
+		position: fixed;
+		right: 0;
+
+		&:hover,
+		&:focus,
+		&:active {
+			position: fixed;
+			border: none;
+		}
+
+		@include mobile {
+			top: 507px;
+		}
+
+		.text-btn-modal {
+			@include center-flex;
+			flex-direction: column;
+			color: white;
+			padding: 2.0625rem 1.25rem 1.3125rem 1.25rem;
+
+			i {
+				transform: rotate(90deg);
+				font-size: $font-size-x-larges;
+				margin-bottom: .5625rem;
+			}
+
+			.text-modal {
+				font-size: $font-size-x-large;
+				transform: rotate(-180deg);
+				writing-mode: vertical-rl;
+
+				@include mobile {
+					font-size: $font-size-large;
+				}
+			}
+
+			@include mobile {
+				padding: 1.4375rem .5625rem 1.3125rem .5625rem;
+			}
+		}
+	}
+}
+
+//form modal
+.modal-dialog {
+	.btn-close {
+		size: 1.875rem;
+	}
+}
+
+//input file
+.resume-input-wrapper {
+	position: relative;
+
+	.form-control {
+		padding-right: 7.5rem;
+	}
+}
+
+.form-group {
+	margin-bottom: .625rem;
+}
+
+.btn-file {
+	//button up-file
+	border: 0;
+	position: absolute;
+	top: 50%;
+	right: 0.625rem;
+	transform: translateY(-50%);
+}
+
+//btn submit
+.btn-submit {
+	height: 40px;
+}
+
+/***** modal *****/
+.modal-header {
+	padding: 1.5625rem 1.5625rem 1.25rem 1.5625rem;
+	border-bottom: none;
+}
+
+.modal-body {
+	padding: 0rem 1.5625rem .9375rem 1.5625rem;
+}
+
+.modal-footer {
+	padding: 0rem 1.5625rem 1.75rem 1.5625rem;
+}
+
+
+/*****************************About Us*****************************/
+
+/* hero image */
+.hero-about {
+	@include hero-image("../img/bg-2.jpg", 250px, 0.2, "../img/bg-about-mobile.png");
+	margin-bottom: 2.625rem;
+
+	@include mobile {
+		margin-bottom: 2rem;
+
+	}
+}
+
+//breadcrumb styles
+.breadcrumb-area {
+	margin-bottom: 3.25rem;
+
+	@include mobile {
+		margin-bottom: 2rem;
+		padding-left: 1.125rem;
+	}
+
+	.breadcrumb {
+
+		--bs-breadcrumb-divider: '-'; // Replace the delimiter with a hyphen
+
+		li {
+			&::before {
+				color: $grey-border; // Color for the delimiter
+			}
+		}
+
+		.breadcrumb-item {
+			a {
+				text-decoration: none;
+				color: $grey-border; //Color for the links
+			}
+
+			&.active {
+				color: $primary-color; // active
+			}
+		}
+	}
+}
+
+.company-intro {
+	margin-bottom: 3.6875rem;
+
+	//mobile styles
+	@include mob-let {
+		margin-bottom: 3.5rem;
+		padding-right: 1.125rem;
+		padding-left: 1.125rem;
+	}
+
+	.intro-img {
+		box-shadow: 0rem .375rem .75rem rgba(black, 0.10);
+		position: absolute;
+		width: 31.5rem;
+
+		@media screen and (min-width: 992px) and (max-width: 1247px) {
+			position: relative;
+			width: 100%; //100% width relative to the column
+		}
+
+		img {
+			max-height: 14.0625rem;
+			border-radius: .625rem;
+			height: auto;
+			object-fit: cover;
+			width: 100%;
+		}
+
+		//mobile styles
+		@include mob-let {
+			position: unset; //remove fixed positioning
+			width: 100%;
+
+			img {
+				max-height: none; //remove fixed height
+				object-fit: cover;
+				width: 100%;
+				height: auto; //ensure the image maintains its original aspect ratio
+				aspect-ratio: 16/9; //keep aspect ratio so height scales proportionally with width
+			}
+		}
+	}
+}
+
+.about-content {
+	line-height: 1.56rem;
+	color: black;
+	font-size: $font-size-base;
+
+	&.intro-content {
+		max-width: 41.375rem;
+		margin-bottom: 0rem;
+
+		@include mob-let {
+			margin-bottom: 1.25rem;
+		}
+	}
+
+	&.services-text {
+		line-height: 1.2rem !important;
+		margin-bottom: 3.625rem;
+		max-width: 32.875rem;
+
+		@include mob-let {
+			padding: 0rem 1.125rem 0rem 1.125rem;
+			margin-bottom: 3.75rem;
+		}
+	}
+}
+
+.about-services {
+	padding-bottom: 2.5rem;
+	padding-top: 3.125rem;
+	background-color: $grey-color-lighter;
+
+	@include mobile {
+		padding-bottom: 4.5rem;
+		padding-top: 0rem;
+		background-color: transparent;
+	}
+
+	.services-wrapper {
+		display: flex;
+
+		@include mob-let {
+			flex-direction: column; //align items vertically
+			padding: 0rem 1.125rem 0rem 1.125rem;
+		}
+
+		.services-item {
+			margin-right: 5.3125rem;
+			max-width: 17.5rem;
+
+			@include mob-let {
+				padding-top: 0rem !important;
+				margin-bottom: 2.1875rem;
+				max-width: none; //remove max-width on mobile
+				margin-right: 0rem;
+
+				&:nth-child(3) {
+					margin-bottom: 0rem;
+				}
+			}
+
+			&:nth-child(3) {
+				//no max-width and margin-right applied to this element
+				margin-right: 0;
+				max-width: none;
+				padding-right: 13.75rem;
+				margin-left: 1.875rem;
+				padding-left: .625rem;
+
+				@include mob-let {
+					margin-left: 0rem !important;
+					padding-right: 0rem;
+					padding-left: 0rem;
+				}
+
+				@media only screen and (min-width: 993px) and (max-width: 1399px) {
+					padding-right: 0rem;
+					margin-left: 0rem !important;
+				}
+
+			}
+
+			img {
+				margin-bottom: 1.5625rem;
+			}
+
+			.sub-text {
+				&.item-text {
+					line-height: 1.365rem;
+				}
+			}
+		}
+	}
+}
+
+//about message
+
+.about-message {
+	padding: 2.5rem 0rem 2.625rem 0rem;
+
+	.message-text {
+
+		line-height: 1.755rem;
+		position: relative;
+		max-width: 46.5625rem;
+		margin: 0 auto;
+
+		@include mobile {
+			text-align: center;
+			max-width: 18rem;
+		}
+
+		&::before {
+			content: "“";
+			font-size: 3.75rem;
+			position: absolute;
+			left: 0;
+			top: .4375rem;
+
+			@include mob-let {
+				top: -.625rem;
+				left: -.5625rem;
+				transform: rotate(-4deg);
+			}
+		}
+
+		&::after {
+			content: "”";
+			font-size: 3.75rem;
+			position: absolute;
+			right: 40;
+			bottom: -1.5625rem;
+
+			@include mob-let {
+				bottom: -2.25rem;
+				transform: rotate(-7deg);
+			}
+		}
+	}
+}
+
+.company-message {
+	max-width: 45.3125rem;
+	padding: 2.5625rem 0rem 3.4375rem 0rem;
+
+	@include mob-let {
+		padding: 2.625rem 1.125rem 0rem 1.125rem;
+	}
+}
+
+//feedback
+.feedback {
+	padding: 4.3125rem 0rem 5.375rem 0rem;
+	background: url("../img/bg-grey.png") no-repeat center/cover;
+
+	@include mob-let {
+		padding: 4.625rem 1.125rem 5.0625rem 1.125rem;
+	}
+
+	.feedback-about {
+		margin-bottom: 2.375rem;
+		line-height: 1.35rem;
+	}
+
+	.feedback-comments {
+		max-width: 42.1875rem;
+
+		.owl-carousel {
+
+			//styles for a carousel slider
+			.owl-dots {
+				margin-bottom: 2.25rem;
+				display: inline-block;
+
+				.owl-dot {
+
+					//styles for individual dots
+					span {
+						background: white;
+						border: 1px solid $grey-border;
+					}
+
+					&.active {
+						span {
+							background: $black-text-color;
+						}
+					}
+				}
+			}
+
+			.owl-nav {
+				display: none; //hides the navigation arrows for the carousel
+			}
+
+			.owl-item {
+				margin-bottom: 1.1875rem;
+
+				.item {
+					h4 {
+						font-family: 'Radley';
+						line-height: 1.5794rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.btn-outline-dark {
+	color: black;
+	border: 1px solid black;
+	font-size: $font-size-x-large;
+	height: 2.9375rem;
+	padding-right: .875rem;
+	padding-left: 1.5625rem;
+	border-radius: 0rem;
+
+	i {
+		margin-left: 1rem;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: black;
+	}
+
+	@include mobile {
+		width: 100%;
+
+		i {
+			margin-left: 3rem;
+		}
+	}
+
+}
+
+///**************** Jobs page  ***************/
+
+//hero image
+.job-hero {
+	margin-bottom: 2.625rem;
+
+	// Hide the mobile image on desktop and the desktop image on mobile
+	.desktop-image {
+		display: block;
+	}
+
+	.mobile-image {
+		display: none;
+	}
+
+	@include mobile {
+		.desktop-image {
+			display: none;
+		}
+
+		.mobile-image {
+			display: block;
+		}
+	}
+}
+
+//hero content
+.hero-content {
+	margin-bottom: 1.25rem;
+
+	@include mob-let {
+		margin-bottom: 1.8125rem;
+
+	}
+
+	.hero-title {
+		font-weight: bold;
+		font-size: $font-size-xx-large;
+		color: $black-text-color;
+		margin-bottom: 0rem;
+		line-height: 3.36rem;
+
+		@include mobile {
+			font-size: $font-size-xxx-large;
+			padding-left: 1.125rem;
+		}
+	}
+}
+
+//search jobs
+.job-search {
+	margin-bottom: 1.4375rem;
+
+	@include mobile {
+		margin-bottom: 1.875rem;
+	}
+
+	@include tablet {
+		.form-search-job {
+			flex-direction: column-reverse;
+		}
+	}
+
+	.job-search-item {
+		@include mobile {
+			margin-bottom: .9375rem;
+		}
+	}
+
+	#deposit-btn {
+		display: flex;
+		justify-content: center;
+
+		@include tablet {
+			justify-content: left;
+		}
+
+		.deposit-btn {
+			//button show popup
+			padding: .625rem 2.5625rem .625rem 2.3125rem;
+
+			@include mobile {
+				width: 100%;
+			}
+
+			@include tablet {
+				margin-bottom: 1.0625rem;
+			}
+		}
+	}
+}
+
+.jobs-main {
+	@include mobile {
+		padding-left: 1.125rem;
+		padding-right: 1.375rem;
+	}
+
+	padding-bottom: 3.75rem;
+	background-color: $grey-color-lighter;
+
+	.job-list {
+		margin-bottom: 2.375rem;
+
+		.job-list-item {
+			border-bottom: 2px dashed $grey-table-border;
+
+			.job-news-link {
+				transition: background-color 0.3s;
+				padding: 1.25rem 0rem 1.5625rem 0rem;
+			}
+
+			.job-title {
+				position: relative;
+
+				.dot-list {
+					position: absolute;
+					content: ".";
+					width: .3125rem;
+					height: .3125rem;
+					top: .5rem;
+					left: -.625rem;
+					background-color: $primary-color;
+					margin-right: .9375rem;
+					display: inline-block;
+					border-radius: 50%;
+
+					@include mobile {
+						top: .5rem;
+					}
+				}
+			}
+		}
+	}
+
+	@include mobile {
+		//change the position of columns in mobile view
+
+		.item-job-date {
+			order: 2;
+		}
+
+		.item-job-title {
+			order: 1;
+		}
+
+		.item-job-location {
+			display: flex;
+			justify-content: end;
+			order: 3;
+		}
+	}
+}
+
+//pagination
+
+.pagination-page {
+	nav {
+		.pagination {
+
+			.page-item {
+
+				.pagination-icon {
+					//icon previous and next page of pagination
+					width: 1.875rem;
+					height: 1.875rem;
+					@include center-flex;
+					text-decoration: none;
+				}
+
+				.page-link {
+					color: $black-text-color;
+					font-family: Poppins;
+					font-size: $font-size-medium;
+					font-weight: $font-weight-regular;
+					line-height: 1.3125rem;
+
+					&.active,
+					&:hover {
+						color: #BDBDBD;
+					}
+
+					border: 0rem;
+					background-color: transparent;
+
+				}
+			}
+		}
+	}
+}
+
+///************Employers page *******************/
+.employers-hero {
+	@include hero-image("../img/bg-employers.png", 250px, 0.2, "../img/bg-employers-mob.png");
+	margin-bottom: 2.625rem;
+
+	@include mob-let {
+		margin-bottom: 2rem;
+	}
+
+}
+
+.employers-main {
+	margin-top: -1.1875rem;
+
+	@include mob-let {
+		margin-top: 1.5rem;
+
+	}
+}
+
+//employers main
+.employers-main {
+	padding: 2.8125rem 0rem 6.375rem 0rem;
+	background: url("../img/bg-grey.png") no-repeat center/cover;
+
+	@include mob-let {
+
+		padding: 3.1875rem 1.125rem 3.8125rem 1.125rem;
+	}
+
+	.employers-intro {
+		margin-bottom: 2.8125rem;
+
+		@include mob-let {
+			margin-bottom: 2.75rem;
+		}
+	}
+
+	.resume-input-wrapper {
+		//icon link
+		position: relative;
+
+		input {
+			padding-left: 2.5rem;
+			color: $grey-light-border;
+			font-size: $font-size-medium;
+		}
+
+		&::before {
+			content: '\f0c6';
+			font-family: "Font Awesome 5 Free";
+			position: absolute;
+			top: 20%;
+			right: 0;
+			left: 0;
+			color: $grey-light-border;
+			padding-left: 1.25rem;
+		}
+	}
+
+	.employer-form {
+		.job-detail-left {
+			padding-right: .75rem;
+
+			@include mob-let {
+				padding-right: 0rem;
+			}
+		}
+
+		.job-detail-right {
+			padding-left: .75rem;
+
+			@include mob-let {
+				padding-left: 0rem;
+			}
+		}
+
+		@include mob-let {
+			.form-content {
+				margin-bottom: 1.25rem;
+			}
+		}
+
+		@include tablet {
+			.form-icon {
+				width: 1.875rem;
+				height: 1.875rem;
+
+				i {
+					font-size: $font-size-x-large;
+				}
+			}
+
+			.card-title {
+				font-size: $font-size-small !important;
+			}
+		}
+	}
+
+	//check box
+
+	.form-group-check {
+		margin-bottom: 2.8125rem;
+
+	}
+
+	.form-check {
+		.form-check-input {
+			width: 1.25rem;
+			height: 1.25rem;
+			margin-right: .75rem;
+			border: 1px solid $grey-border;
+		}
+	}
+}
+
+.margin-label {
+	margin-bottom: .3125rem;
+}
+
+.textarea-add-info {
+	//overwrite the style from the form control
+	height: auto;
+	min-height: 7.3125rem;
+	overflow-y: auto; //vertical scrollbar
+	resize: vertical;
+
+	@include mobile {
+		height: 4.5rem;
+	}
+}
+
+.form-content {
+	padding: 1.3125rem 1.5625rem 1.5625rem 1.5625rem;
+	border-radius: .625rem;
+	background-color: white;
+	box-shadow: 0 .375rem .75rem rgba(black, 0.15);
+
+}
+
+.form-card {
+	border-radius: .625rem;
+	background-color: white;
+	box-shadow: 0rem .375rem .75rem rgba(black, 0.15);
+
+	@include mob-let {
+		margin-bottom: 3.5625rem;
+	}
+
+	.card-body {
+		padding: 0rem 1.625rem .938rem 1.625rem;
+	}
+
+	.card-header {
+		padding: 1.313rem 1.563rem 1.438rem 1.563rem;
+	}
+
+	.card-footer {
+		padding: .938rem 1.563rem 1.563rem 1.563rem;
+	}
+}
+
+//*************** newsroom-page ********************************/
+
+//hero img
+.hero-newsroom {
+	@include hero-image("../img/bg-newsroom.png", 250px, 0.2, "../img/bg-news-mob.png");
+	margin-bottom: 2.625rem;
+
+	@include mobile {
+		margin-bottom: 2rem;
+	}
+}
+
+//breadcrumb
+.breadcrumb-newsroom {
+	margin-bottom: 2.625rem;
+
+	@include mob-let {
+		margin-bottom: 2rem;
+	}
+}
+
+.news-link {
+	display: block;
+
+	&:hover {
+		background-color: $grey-lighter-color; //change background color
+	}
+}
+
+.news-main {
+	margin-top: -0.6875rem;
+	margin-bottom: 3.625rem;
+
+	@include mob-let {
+		padding-left: .8125rem;
+		padding-right: 1.125rem;
+	}
+
+	.news-list {
+		margin-bottom: 1.875rem;
+
+		.news-list-item {
+			border-bottom: 2px dashed $grey-table-border;
+			margin-bottom: 2.0625rem;
+			padding-bottom: 1.875rem;
+
+			@include mob-let {
+				flex-direction: column;
+			}
+
+			.news-time {
+				@include mob-let {
+					margin-bottom: 1.25rem;
+				}
+
+				margin-right: 1.5625rem;
+
+				i {
+					font-size: 3.125rem;
+					padding-right: .3125rem;
+				}
+
+				.news-date {
+					margin-right: .5625rem;
+					width: 107px;
+
+					.date {
+						margin-bottom: -.375rem;
+					}
+				}
+
+				.vertical-line {
+					border-left: 1px solid $grey-note-color; //vertical line
+					height: 4.6875rem; //height of the vertical line
+
+					@include mob-let {
+						display: none;
+					}
+				}
+			}
+
+			.news-item {
+				.news-title {
+					max-width: 77.625rem;
+					padding-right: 3.4375rem;
+
+					@include mob-let {
+						padding-right: 0rem;
+					}
+
+					margin-bottom: .9375rem;
+
+					//set display mode and truncate text overflow with ellipsis
+					display: -webkit-box; //display as flexbox vertically
+					-webkit-box-orient: vertical; //set flexbox direction to vertical
+					-webkit-line-clamp: 1; //number of lines to show
+					overflow: hidden; //hide overflow content
+				}
+
+				.news-description {
+					max-width: 51.625rem;
+				}
+			}
+		}
+	}
+}
+
+//***************** News detail *************************/
+
+//breadcrumbs
+.main-news-detail {
+	margin-top: 2.5rem;
+}
+
+.news-detail {
+	display: flex;
+	margin-bottom: 8.375rem;
+	margin-top: -0.75rem;
+
+	@include mob-let {
+		flex-direction: column;
+	}
+
+	.news-detail-left {
+		max-width: 52.6875rem;
+		margin-right: 4.125rem;
+
+		@include mob-let {
+			margin-right: 0rem;
+			margin-bottom: 2.5625rem;
+			padding: 0 1.125rem;
+		}
+
+		@media screen and (min-width: 993px) and (max-width: 1400px) {
+
+			max-width: 40.625rem;
+		}
+
+		.news-detail-head {
+			margin-bottom: .9375rem;
+
+			@include desktop {
+				.social-link-icon {
+					.btn {
+						display: flex; //show all buttons on desktop
+
+						&:first-child {
+							display: none; //hide the "expand" button on desktop
+						}
+					}
+				}
+			}
+
+			@include mob-let {
+
+				.social-link-icon {
+					position: relative;
+					cursor: pointer;
+					transition: all 0.2s ease-out;
+
+					.btn {
+						display: none; //hide all social buttons on mobile
+
+						&:first-child {
+							display: flex; //show button
+							text-align: center;
+						}
+
+						&:not(:first-child) {
+							//applies to all but the first button
+							position: absolute;
+							z-index: 2;
+							background-color: white;
+
+							&:hover,
+							&:focus {
+								background-color: $grey-lighter-color;
+							}
+						}
+
+						&:nth-child(2) {
+							top: -59px;
+							left: 9px;
+						}
+
+						&:nth-child(3) {
+							top: -51px;
+							left: -43px;
+						}
+
+						&:nth-child(4) {
+							top: -8px;
+							left: -65px;
+						}
+
+						&:nth-child(5) {
+							top: 36px;
+							left: -44px;
+						}
+
+						&:nth-child(6) {
+							top: 54px;
+							left: 3px;
+						}
+					}
+
+					&.show-buttons .btn {
+						display: flex; //show all buttons when class is added
+					}
+				}
+			}
+		}
+
+		.news-description {
+			margin-bottom: 1.75rem;
+		}
+	}
+
+	.news-detail-right {
+		padding-right: 5.3125rem;
+
+		@include mob-let {
+			padding: 0 1.125rem;
+		}
+
+		@media screen and (min-width: 993px) and (max-width: 1400px) {
+			padding-right: 0rem;
+		}
+
+		.related-item {
+			margin-bottom: 1.875rem;
+		}
+	}
+}
+
+/******************************* Jobs-detail ***************************************/
+//breadcrumb
+.main-job-detail {
+	margin-top: 2.5rem;
+
+	@include mob-let {
+		margin-top: 1.563rem;
+	}
+}
+
+@include mob-let {
+	.nav-previous {
+		display: none !important;
+	}
+}
+
+.normal-bottom {
+	margin-bottom: 1.25rem;
+
+	@include mob-let {
+		margin-bottom: 1.1875rem;
+	}
+}
+
+.job-detail {
+	margin-bottom: 3.25rem;
+
+	@include mob-let {
+		margin-top: 1.5625rem;
+
+	}
+
+	hr {
+		border: 1px solid $grey-note-color;
+	}
+
+	.job-detail-left {
+		padding-right: 3.125rem;
+
+		@include tablet {
+			padding-right: 0rem;
+		}
+
+		@include mobile {
+			padding: 0 1.125rem;
+		}
+
+		.personnel-info {
+			padding: .9375rem 0rem .75rem 1.4375rem;
+			background-color: $grey-color-lighter;
+			border: 1px solid $grey-note-color;
+
+			@include mob-let {
+				margin-bottom: 1.6875rem;
+			}
+		}
+	}
+
+	.job-detail-note {
+		padding-right: 3.125rem;
+
+		@include mobile {
+			padding: 0 1.125rem 0 1.25rem;
+		}
+
+		@include tablet {
+			padding-right: 0rem;
+		}
+
+	}
+
+	.job-detail-right {
+
+		@include mobile {
+			padding: 0 .9375rem;
+			margin-bottom: .9375rem;
+		}
+
+		@include tablet {
+			margin-bottom: .9375rem;
+		}
+	}
+
+	.job-detail-content {
+
+		.content-item {
+			position: relative;
+			left: .9375rem;
+			margin-bottom: 0rem;
+
+			&::before {
+				content: ".";
+				font-size: 3.125rem;
+				margin-right: .625rem;
+				position: absolute;
+				left: -1.0625rem;
+				top: -2.5rem;
+			}
+		}
+	}
+}
+
+/******************* Contact Us *****************/
+//hero img
+
+.contactus-hero {
+	@include hero-image("../img/bg-contactus.png", 250px, 0.2, "../img/bg-contactus-mob.png");
+	margin-bottom: 2.625rem;
+
+	@include mob-let {
+		margin-bottom: 2rem;
+	}
+}
+
+.sub-hero-content {
+	margin-bottom: 2.5625rem;
+
+	@include mob-let {
+		padding: 0 1.125rem;
+	}
+}
+
+.contact-company {
+	margin-bottom: 1.875rem;
+
+	.contact-company-item {
+		line-height: 1.2rem;
+		padding-bottom: .375rem;
+
+		@include mob-let {
+			margin-bottom: 1.125rem;
+		}
+	}
+}
+
+.contactus-main {
+	margin-bottom: 4.375rem;
+
+	@include mob-let {
+		padding: 0rem 1.125rem;
+		margin-bottom: 3.4375rem;
+	}
+
+	.map {
+		iframe {
+			object-fit: cover;
+			width: 100%; //set the width to auto-adjust for all screens
+			height: 37.1875rem;
+			border: 1px solid $grey-color;
+			border-radius: .625rem;
+			box-shadow: 0 .375rem .75rem 0 rgba(0, 0, 0, 0.10);
+		}
+
+		@include mobile {
+			iframe {
+				height: 25rem;
+			}
+		}
+
+		@include tablet {
+			iframe {
+				height: 31.25rem;
+			}
+		}
+	}
+}

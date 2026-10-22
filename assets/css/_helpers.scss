@@ -1,0 +1,191 @@
+/*********** class color *********/
+
+.bg-primary {
+	background-color: $primary-color !important; //#003D9F
+}
+
+.text-primary {
+	color: $primary-color!important; //#003D9F
+}
+
+.text-grey {
+	color: $grey-light-border; //#828282
+}
+
+.text-black-grey {
+	color: $black-grey-color; //#484848
+}
+
+.text-blue {
+	color: #346979;
+}
+
+.black-text {
+	color: $black-text-color; //#333333
+}
+
+.bg-grey-color {
+	background-color: $grey-light-border; //#828282
+}
+
+.links-hover { //when hovered, it will have a red underline effect
+	&:hover {
+		text-decoration: underline !important;
+		text-decoration-color: $primary-color !important;
+		transition: transform 0.3s ease-in-out;
+	}
+}
+
+
+/***************** class fontsize ********************/
+.fs-base {
+	font-size: $font-size-base; //16px
+}
+
+.fs-text-grey {
+	font-size: $font-size-small; //12px
+
+}
+
+.fs-x-large {
+	font-size: $font-size-x-large; //20px
+}
+
+.fs-larges {
+	font-size: $font-size-x-larges; //25px
+}
+
+.sub-text { //paragraph
+	font-size: $font-size-medium;
+	line-height: 1.05rem;
+	color: $black-text-color;
+}
+
+.fs-medium {
+	font-size: $font-size-medium; //14px
+}
+
+.fs-large {
+	font-size: $font-size-large; //18px
+}
+
+.fs-xx-large {
+	font-size: 30px;
+}
+
+.fs-xx-larges {
+	font-size: $font-size-xx-larges;  //22px
+}
+
+/************* Class font-weight  ****************/
+.fw-semi-bold {
+	font-weight: $font-weight-semi-bold; //600
+}
+
+.fw-medium {
+	font-weight: $font-weight-medium; //500
+}
+
+/************** Class form custom *******************/
+
+.form-icon { // Icon of the form
+	background-color: $primary-color;
+	color: white;
+	width: 3.125rem;
+	height: 3.125rem;
+	@include center-flex;
+	i {
+		font-size: $font-size-x-larges;
+	}
+}
+
+//input form
+.form-control, .form-select, .input-group-text {
+	height: 2.5rem;
+	border-radius: 5px;
+	border: 1px solid $grey-note-color;
+	font-size: $font-size-medium;
+	color: $grey-light-border;
+
+}
+
+/************** class button custom*******************/
+
+//button background #003D9F
+.btn-primary {
+	background-color: $primary-color !important;
+	color: white;
+	border: none;
+
+	&.active,
+	&:hover,
+	&:focus
+	{
+		transition: transform 200ms ease-in-out;
+		background-color: darken($primary-color, 5%) !important;
+		border: none;
+	}
+}
+
+//button background #828282
+.btn-secondary {
+	color: white;
+	background-color: $grey-light-border !important;
+	border: none;
+
+	&.active,
+	&:hover,
+	&:focus {
+		background-color: lighten($grey-light-border, 15%) !important;
+		transition: transform 200ms ease-in-out;
+		border: none;
+	}
+}
+
+.btn-outline-danger { //#003D9F
+
+	color: $primary-color;
+	border-color: $primary-color;
+	border-radius: 0rem;
+
+	&.active,
+	&:hover,
+	&:focus
+	{
+		transition: transform 200ms ease-out;
+		background-color: $primary-color;
+		color: white;
+	}
+}
+
+.btn-outline-secondary {  //#828282
+	color: $grey-light-border;
+	border-color: $grey-light-border;
+	border-radius: 0rem;
+
+	&.active,
+	&:hover,
+	&:focus
+	{
+		background-color:$grey-lighter-color;
+		color: white;
+		transition: transform 200ms ease-out;
+	}
+}
+
+.btn-dark {
+	color: #FFFFFF !important;
+	background-color: $black-text-color;
+	font-size: $font-size-medium;
+
+}
+
+.btn-group-custom { //button for social icons
+	width: 2.5rem;
+	height: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid $grey-border; //#B1B1B1
+
+}
